@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="card_outer_margin">16dp</dimen>
+    <dimen name="card_inner_margin">12dp</dimen>
+    <dimen name="card_spacing">9dp</dimen>
+    <dimen name="linear_layout_margin">11dp</dimen>
+</resources>

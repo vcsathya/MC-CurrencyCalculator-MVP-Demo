@@ -1,0 +1,175 @@
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.currencyconverter.vcsathya.mc.view.calculator.CurrencyCalculator">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/base_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorCard"
+            android:layout_marginTop="@dimen/card_outer_margin"
+            android:layout_marginLeft="@dimen/card_outer_margin"
+            android:layout_marginRight="@dimen/card_outer_margin" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_inner_margin">
+
+                <TextView
+                    android:id="@+id/i_have"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/i_have" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_spacing"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/i_have" >
+
+                    <ImageView
+                        android:id="@+id/base_flag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/us"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/description_base_flag" />
+
+                    <TextView
+                        android:id="@+id/base_currency"
+                        style="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_spacing"
+                        android:drawableEnd="@mipmap/arrow_expand"
+                        android:hint=" USD "
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_conversion_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true" />
+
+                <EditText
+                    android:id="@+id/enter_base_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/base_conversion_rate"
+                    android:layout_alignParentEnd="true"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/enter_currency_hint" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/target_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorCard"
+            android:layout_marginTop="@dimen/card_spacing"
+            android:layout_marginLeft="@dimen/card_outer_margin"
+            android:layout_marginRight="@dimen/card_outer_margin" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_inner_margin">
+
+                <TextView
+                    android:id="@+id/i_want"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/i_want" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_spacing"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/i_want" >
+
+                <ImageView
+                    android:id="@+id/target_flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/eu"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/description_target_flag" />
+
+                <TextView
+                    android:id="@+id/target_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/card_spacing"
+                    style="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:drawableEnd="@mipmap/arrow_expand"
+                    android:hint=" EUR "
+                    android:textAlignment="center"
+                    android:layout_alignTop="@+id/base_flag"
+                    android:layout_alignBottom="@+id/base_flag"
+                    android:layout_toEndOf="@+id/base_flag" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/target_conversion_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true" />
+
+                <EditText
+                    android:id="@+id/enter_target_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/target_conversion_rate"
+                    android:layout_alignParentEnd="true"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/enter_currency_hint" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+</LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

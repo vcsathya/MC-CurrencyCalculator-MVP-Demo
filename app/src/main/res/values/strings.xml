@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Currency Calculator</string>
+
+    <string name="title_activity_currency_calculator">Currency</string>
+    <string name="title_activity_currency_selector">Select Currency</string>
+
+    <string name="default_base_currency">USD</string>
+    <string name="default_target_currency">EUR</string>
+    <string name="action_search">Search</string>
+
+    <string name="enter_currency_hint">Enter amount</string>
+    <string name="search_hint">Search</string>
+
+    <string name="i_have">I have</string>
+    <string name="i_want">I want</string>
+    <string name="description_base_flag">Selected base Country\'s flag</string>
+    <string name="description_target_flag">Selected target Country\'s flag</string>
+
+
+    <string name="separator">-</string>
+    <string name="default_amount">1</string>
+    <string name="equals">=</string>
+
+
+    <!--Error Messages-->
+    <string name="generic_error">Something is not right. Please try again.</string>
+    <string name="network_error">You are not online. Make sure your device is connected to the internet.</string>
+
+</resources>
